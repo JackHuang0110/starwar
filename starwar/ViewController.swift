@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var Alphaslider: UISlider!
     @IBOutlet weak var StarladyImageview: UIImageView!
     
+    @IBAction func RandomColor(_ sender: UIButton) {
+        let red = CGFloat.random(in: 0...1)
+        let green = CGFloat.random(in: 0...1)
+        let blue = CGFloat.random(in: 0...1)
+        let alpha = CGFloat.random(in: 0...1)
+        StarladyImageview.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
     @IBAction func Colorchange(_ sender: UISlider) {
         StarladyImageview.backgroundColor = UIColor(red: CGFloat(Redslider.value), green: CGFloat(Greenslider.value), blue: CGFloat(Blueslider.value), alpha: CGFloat(Alphaslider.value))
     }

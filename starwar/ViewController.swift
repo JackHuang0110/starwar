@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var blueValueLabel: UILabel!
+    @IBOutlet weak var greenValueLabel: UILabel!
+    @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var Redslider: UISlider!
     @IBOutlet weak var Greenslider: UISlider!
     @IBOutlet weak var Blueslider: UISlider!
@@ -25,7 +28,14 @@ class ViewController: UIViewController {
     }
     @IBAction func Colorchange(_ sender: UISlider) {
         StarladyImageview.backgroundColor = UIColor(red: CGFloat(Redslider.value), green: CGFloat(Greenslider.value), blue: CGFloat(Blueslider.value), alpha: CGFloat(Alphaslider.value))
+    
+    redValueLabel.text = String(format: "%.2f", Redslider.value)
+    greenValueLabel.text = String(format: "%.2f", Greenslider.value)
+    blueValueLabel.text = String(format: "%.2f", Blueslider.value)
+    
+    
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
